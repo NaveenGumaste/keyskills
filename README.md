@@ -1,11 +1,14 @@
-# Agent Skills
+# Keyskills
 
-Portable agent skills for repo init: SEO, design, git, and cleanup.
+Portable [Agent Skills](https://agentskills.io/) for coding agents: SEO, design, git, and cleanup.
+
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![skills.sh](https://skills.sh/b/NaveenGumaste/keyskills)](https://skills.sh/NaveenGumaste/keyskills)
 
 ## Install
 
 ```bash
-npx skills add <you>/agent-skills
+npx skills add NaveenGumaste/keyskills
 ```
 
 Same command works with `bunx`, `pnpm dlx`, and `yarn dlx`.
@@ -15,17 +18,49 @@ The CLI lists the four skills and asks which ones to install, which agents to ta
 ### Non-interactive
 
 ```bash
-npx skills add <you>/agent-skills --list
-npx skills add <you>/agent-skills --skill seo-setup -y
-npx skills add <you>/agent-skills --skill seo-setup --skill design-skill -a claude-code -a cursor -y
-npx skills add <you>/agent-skills --all -y
+npx skills add NaveenGumaste/keyskills --list
+npx skills add NaveenGumaste/keyskills --skill seo-setup -y
+npx skills add NaveenGumaste/keyskills --skill seo-setup --skill design-skill -a claude-code -a cursor -y
+npx skills add NaveenGumaste/keyskills --all -y
 ```
 
-### Skills
+## Skills
 
-| Install name       | When to pick it                                       |
-| ------------------ | ----------------------------------------------------- |
-| `seo-setup`        | Metadata, sitemap, robots, JSON-LD, Open Graph        |
-| `design-skill`     | Frontend UI that should not look like default AI slop |
-| `git-skill`        | Commits, branches, ignores, PR hygiene                |
-| `codebase-cleanup` | Dead code, unused deps, lint/format, structure        |
+| Install name                                           | When to pick it                                                                                            |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| [`seo-setup`](skills/seo-setup/SKILL.md)               | Metadata, sitemap, robots, JSON-LD, OG, AEO/AI-search, `llms.txt`. Additive; lists changes first.          |
+| [`design-skill`](skills/design-skill/SKILL.md)         | Frontend UI that should not look like default AI slop. Landing pages, portfolios, redesigns.               |
+| [`git-skill`](skills/git-skill/SKILL.md)               | Commits, branches, ignores, PR hygiene. Lint+build then atomic commits+push; PR from/to, assignee, labels. |
+| [`codebase-cleanup`](skills/codebase-cleanup/SKILL.md) | Dead code, unused deps, lint. Asks delete / archive / keep; default keep.                                  |
+
+After install, ask the agent in plain language (`add SEO`, `commit and push`, `clean this repo`). Name the skill if it does not pick it up.
+
+`design-skill` is derived from [taste-skill](https://github.com/Leonxlnx/taste-skill).
+
+## Contributing
+
+Fork, branch off `main` (`feat/`, `fix/`, `docs/`), and open a PR against `main`. Keep one concern per PR. Match conventional commits (`feat:`, `fix:`, `docs:`).
+
+A skill lives at `skills/<name>/SKILL.md`. `name` in the YAML frontmatter must match the folder. `description` must say what it does and when to use it. Follow the [Agent Skills spec](https://agentskills.io/specification) and the shape of the existing files (inspect first, conservative defaults).
+
+## Checking
+
+This repo is skill documents, not an app. There is no test suite. Before a PR:
+
+```bash
+npx skills add . --list
+```
+
+That must show all four skills. Then install the changed skill from the working tree and run it once on a throwaway project:
+
+```bash
+npx skills add . --skill <name> -a <your-agent> -y
+```
+
+Confirm the skill still lists work before mutating anything, and that unanswered items stay put (cleanup default is keep; SEO does not overwrite working tags; git does not force-push or rewrite history).
+
+In the PR, say what changed, the commands you ran, and the smoke result (or that it is docs-only). Reviewers re-run discovery on the branch and re-read the skill diff. Nothing merges if discovery breaks or the skill silently drops its safety rules.
+
+## License
+
+[MIT](LICENSE)
