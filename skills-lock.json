@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "skills": {
+    "devops-skill": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "47a87d9453e6c2c9070a056c402b8f45723dbe4ad7c2aff6c646f7d424e29e23"
+    },
+    "git-skill": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "d0b055126fac7019a617d9ee7e6068f6424eb7f96634f8c61e6bbe1f114a8ebf"
+    }
+  }
+}
