@@ -14,6 +14,8 @@ Portable [Agent Skills](https://agentskills.io/) for coding agents: SEO, design,
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![skills.sh](https://skills.sh/b/NaveenGumaste/keyskills)](https://skills.sh/NaveenGumaste/keyskills)
 
+<a href="https://www.producthunt.com/products/keyskills-skills-for-ai-agents?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-keyskills-skills-for-ai-agents-2" target="_blank" rel="noopener noreferrer"><img alt="KeySkills - Skills for AI Agents - Portable skills for AI agents | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1247730&amp;theme=light&amp;t=1789277433760"></a>
+
 ## Install
 
 ```bash
