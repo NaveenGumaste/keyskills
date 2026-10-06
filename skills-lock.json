@@ -10,6 +10,11 @@
       "source": ".",
       "sourceType": "local",
       "computedHash": "d0b055126fac7019a617d9ee7e6068f6424eb7f96634f8c61e6bbe1f114a8ebf"
+    },
+    "test-skill": {
+      "source": ".",
+      "sourceType": "local",
+      "computedHash": "43329bc124231549275ff95c46c2af9dd86db1d67485045c54e8170741c226be"
     }
   }
 }
